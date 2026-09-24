@@ -55,10 +55,11 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="hero-slides" aria-hidden="true">
-      <div class="hero-slide is-active" style="background-image:url('images/hero-sunset.jpg')"></div>
-      <div class="hero-slide" style="background-image:url('images/hero-safari.jpg')"></div>
-      <div class="hero-slide" style="background-image:url('images/dinner-couple.jpg')"></div>
+    <!-- Background video -->
+    <div class="hero-media" aria-hidden="true">
+      <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="images/hero-poster.jpg">
+        <source src="video/hero-main.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="hero-shade"></div>
 

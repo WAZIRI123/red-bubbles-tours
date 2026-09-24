@@ -80,14 +80,12 @@ document.addEventListener("click", (e) => { if (!lang.contains(e.target)) toggle
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") toggleLang(false); });
 markLang(getLang());
 
-// Hero slideshow
-const slides = document.querySelectorAll(".hero-slide");
-let current = 0;
-setInterval(() => {
-  slides[current].classList.remove("is-active");
-  current = (current + 1) % slides.length;
-  slides[current].classList.add("is-active");
-}, 6500);
+// Hero video — respect reduced-motion (the poster image stays visible instead)
+const heroVideo = document.getElementById("heroVideo");
+if (heroVideo && matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  heroVideo.removeAttribute("autoplay");
+  heroVideo.pause();
+}
 
 // Reveal on scroll
 const io = new IntersectionObserver(
